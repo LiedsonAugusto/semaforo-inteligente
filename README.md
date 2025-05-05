@@ -1,46 +1,43 @@
-# Nome do Projeto
-> Um nome provisório que resuma bem a ideia. Seja criativo, mas claro!
+# Semáforo inteligente
 
 ## 👨‍🎓 Integrantes
-- Nome do Estudante 1
-- Nome do Estudante 2
-- ...
+-Liedson Augusto Maciel Costa
 
 ## 💡 Ideia Principal
-Descreva em poucas linhas o que o projeto propõe fazer. 
-Pense como se estivesse explicando para alguém fora da área de tecnologia.
+Construir um agente inteligente que seja capaz de calcular o melhor tempo para o tempo de ciclo para um cruzamento com 3 semáforos
 
 ## 🎯 Objetivos
-- Liste de forma clara o que o sistema pretende resolver ou melhorar.
-- Pode usar bullets ou parágrafos curtos.
+- Melhorar o tempo médio de espera dos veículos
+- Aumentar o fluxo de veículos que passaram do semáforo e diminuir os que estão a espera de passar
+- Melhorar a qualidade de vida das pessoas a respeito do fluxo de trânsito
 
 ## 👥 Público-Alvo
-Quem se beneficia com esse projeto? Um setor específico? Um tipo de usuário?
+Motoristas que forem atravessar o cruzamento específico da cidade de Campina Grande
 
 ## 🤖 Agentes Envolvidos
 Liste os agentes que existirão no sistema e suas funções.
 Exemplo:
-- Agente A: coleta dados
-- Agente B: toma decisões
-- Agente C: executa ações no ambiente
+- Agente Contador de veículos: Realiza a contagem dos veículos das 3 câmeras do cruzamento em específico, categorizando entre carro, moto e grande porte
+- Agente Semáforo: Toma a decisão do tempo do ciclo para os 3 semáforos de acordo com o resultado da contagem do ciclo anterior
 
 ## 🧱 Tecnologias Pretendidas
-- Linguagem de programação
-- Bibliotecas e frameworks
-- Ferramentas para teste, simulação, visualização, etc.
+- Frontend: Framework -> React | Linguagem -> Typescript
+- Backend: Framework -> Nest | Linguagem -> Typescript
+- Agente Contador de veículos: Framework -> YOLOv8 | Linguagem -> Python
+- Agente Semáforo: Framework -> Stable_Baselines3 | Linguagem -> Python
 
 > Justifique, sempre que possível, **por que escolheu cada ferramenta**.
 
 ## 📦 Entradas e Saídas Esperadas
 **Entradas:**
-- Quais dados o sistema recebe?
+- Quantidade dos veículos daquele semáforo
 
 **Saídas:**
-- Quais ações ou informações ele gera?
+- Tempo do ciclo para aquele semáforo
 
 ## 🔁 Interação entre os Agentes
-Descreva como os agentes vão se comunicar ou se coordenar.
-Pode ser uma descrição textual ou um fluxograma em breve.
+Através da contagem dos veículos realizado pelo o Agente Contador de Veículos, a saída será entregue ao Agente Semáforo
+para que ele realize o cálculo do melhor tempo possível
 
 ## 🗂️ Organização e Planejamento do Projeto
 O progresso deste projeto será monitorado através do **GitHub Projects**.
