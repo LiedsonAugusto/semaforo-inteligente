@@ -20,55 +20,46 @@
 ## ⚙️ 2. Arquitetura Atual
 
 - **Quantos agentes existem no sistema atualmente?**  
-  Apenas 1 agente: `AgenteConsultorLegal`.
+  Apenas 1 agente: AgenteContadorDeVeículos
 
 - **Função principal de cada agente:**  
-  Receber perguntas e buscar trechos relevantes em uma base vetorial para gerar uma resposta fundamentada.
+  AGENTE1-> Realizar a contagem de veículos entre os parados e os do fluxo de cada um dos semáforos e enviar para o backend quando for pedido
 
 - **Eles interagem entre si? Como?**  
-  Ainda não. A ideia futura é criar um agente de parsing separado e outro de curadoria de resposta.
+  Ainda não.
 
 - **Já existe algum ambiente de simulação/teste?**  
-  Sim. Interface básica no Gradio para simular perguntas e ver a resposta do sistema.
+  Sim. Coleta de dados dos semáforos através de um script simulando o semáforo da vida real.
 
 ---
 
 ## ✅ 3. Avanços Concretos
 
-- Parser funcional para documentos `.docx` (com alguma limitação em tabelas).
-- Chunking básico com `RecursiveCharacterTextSplitter` da LangChain.
-- Criação inicial da base vetorial com `ChromaDB` e embeddings do modelo `e5-small`.
+- Construção de estatísticas com os dados obtidos
+- Frontend e Backend 80% concluído
 
 ---
 
 ## 🧱 4. Dificuldades Enfrentadas
 
-- As respostas geradas pelo agente ainda são muito genéricas ou irrelevantes.
-- Embeddings parecem fracos — o sistema não está encontrando os trechos certos.
-- Chunking inicial quebrou cláusulas no meio, perdendo contexto.
-- Dúvida se estamos incluindo metadados corretamente no `ChromaDB`.
+- Criar o ambiente de simulação do semáforo inteligente
+- Criar o semáforo inteligente
 
 ---
 
 ## 🛠️ 5. Estratégias de Superação
 
-- Ajustamos o chunking para considerar hierarquia de headings no `.docx`.
-- Testamos usar o `e5-base` no lugar do `e5-small`, mas não tivemos ganho significativo.
-- Fizemos logging dos documentos retornados na busca vetorial para entender o que está vindo.
 
 ---
 
 ## 🎯 6. Próximos Passos
 
-- Reestruturar os documentos com um parser mais robusto que preserve cláusulas inteiras.
-- Criar uma função de avaliação da resposta baseada em "overlap" com o trecho encontrado.
-- Testar uma alternativa de reranking dos trechos antes de enviar à LLM.
+- Entender o SUMO para construção do ambiente de simulação do Semáforo Inteligente
 
 ---
 
 ## 📢 7. Pedido de Ajuda
 
-- Precisamos de ajuda para definir uma boa estratégia de chunking em documentos jurídicos.
-- Também gostaríamos de saber se vale a pena testar outros modelos de embedding (e quais seriam gratuitos e compatíveis).
+- Conteúdos de Aprendizado por reforço
 
 ---
